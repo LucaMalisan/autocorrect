@@ -1,4 +1,6 @@
-﻿openGui() {
+﻿#Requires AutoHotkey v2.0-a
+
+openGui() {
     global MyGui
     global correctText
     global highlightedText
@@ -40,10 +42,10 @@ replaceTextUnderCursor() {
 paste(data) {
     bak := ClipboardAll()
     A_Clipboard := data
-    Send('^v')
+    Send("^v")
     Loop
         Sleep(50)
-    Until !DllCall('GetOpenClipboardWindow', 'Ptr') || (A_Index > 20)
+    Until !DllCall("GetOpenClipboardWindow", "Ptr") || (A_Index > 20)
     A_Clipboard := bak
 }
 
@@ -54,6 +56,6 @@ getHighlightedText() {
 }
 
 Run "typos.ahk"
-Ctrl & O::openGui
-Ctrl & Q::saveAndClose
-Ctrl & R::replaceTextUnderCursor
+Ctrl & O::openGui()
+Ctrl & Q::saveAndClose()
+Ctrl & R::replaceTextUnderCursor()

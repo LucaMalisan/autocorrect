@@ -1,4 +1,4 @@
-# Half-Automatic Autocorrect
+# Half-Automatic Autocorrector
 
 This AutoHotkey Project lets you use a customizable auto-corrector. 
 

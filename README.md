@@ -15,6 +15,6 @@ How to install:
 
 https://github.com/LucaMalisan/autocorrect/blob/78185e653cd8336b54e0d58221ad754814b49072/Autocorrect.ahk#L57-L59
 
-- Compile Autocorrect.ahk to an .exe using Autohotkey Software (AutoHotkey Dash -> Compile). Make sure to use or use v2.x.x as Base File. 
+- Compile Autocorrect.ahk to an .exe using Autohotkey Software (AutoHotkey Dash -> Compile). Make sure to choose v2.x.x in the "Base File (.bin)" Menu. 
 Alternatively, you can use the .exe appended to the latest version (https://github.com/LucaMalisan/autocorrect/releases)
 - Make sure to use the typos.ahk file form this repository and to store it in the same place as the .exe 

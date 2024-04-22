@@ -1,6 +1,18 @@
 ﻿#Requires AutoHotkey v2.0-a
 
-openGui() {
+saveAndClose() {
+    global MyGui
+    global correctText
+    newCommand := "::" . highlightedText . "::" . correctText.Text
+    FileAppend(newCommand . "`n", "typos.ahk",  "UTF-8")
+
+    MyGui.Hide
+    replaceTextUnderCursor()
+    Run "typos.ahk"
+}
+
+replaceTextUnderCursor() {
+
     global MyGui
     global correctText
     global highlightedText
@@ -14,22 +26,6 @@ openGui() {
         correctText:= MyGui.AddEdit()
         MyGui.Show    
     }
-}
-
-saveAndClose() {
-    global MyGui
-    global correctText
-    newCommand := "::" . highlightedText . "::" . correctText.Text
-    FileAppend(newCommand . "`n", "typos.ahk",  "UTF-8")
-
-    MyGui.Hide
-    replaceTextUnderCursor()
-    Run "typos.ahk"
-}
-
-replaceTextUnderCursor() {
-    highlightedText:= getHighlightedText()
-    fileText:= FileRead("typos.ahk")
 
     Loop Parse, fileText, "`n" {
         if(InStr(A_LoopField, highlightedText)) {
@@ -56,6 +52,5 @@ getHighlightedText() {
 }
 
 Run "typos.ahk"
-Ctrl & O::openGui()
 Ctrl & Q::saveAndClose()
 Ctrl & R::replaceTextUnderCursor()

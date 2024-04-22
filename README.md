@@ -11,10 +11,11 @@ How to use:
 
 How to install:
 
+- Download Autohotkey Software v2.0 from https://www.autohotkey.com/ or search in the Windows Store for "AutoHotkey v2 Store Edition"
 - Download the .exe appended to the latest version (https://github.com/LucaMalisan/autocorrect/releases)
 - Make sure to use the typos.ahk file from this repository and to store it in the same place as the .exe 
 
-or in case you want to install it manually:
+or in case you want to compile it manually:
 
 - Download Autohotkey Software v2.0 from https://www.autohotkey.com/ or search in the Windows Store for "AutoHotkey v2 Store Edition"
 - You may set your own Key Combinations here:

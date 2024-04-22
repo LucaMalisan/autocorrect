@@ -18,6 +18,6 @@ or in case you want to install it manually:
 
 - Download Autohotkey Software v2.0 from https://www.autohotkey.com/ or search in the Windows Store for "AutoHotkey v2 Store Edition"
 - You may set your own Key Combinations here:
-https://github.com/LucaMalisan/autocorrect/blob/78185e653cd8336b54e0d58221ad754814b49072/Autocorrect.ahk#L57-L59
+https://github.com/LucaMalisan/autocorrect/blob/78185e653cd8336b54e0d58221ad754814b49072/Autocorrect.ahk#L58-L59
 - Compile Autocorrect.ahk to an .exe using Autohotkey Software (Right click on .ahk File -> Compile (GUI)). Make sure to choose v2.x.x in the "Base File (.bin)" Menu. 
 - Make sure to use the typos.ahk file from this repository and to store it in the same place as the .exe 

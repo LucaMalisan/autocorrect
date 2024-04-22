@@ -3,19 +3,18 @@
 saveAndClose() {
     global MyGui
     global correctText
-    newCommand := "::" . highlightedText . "::" . correctText.Text
+    newCommand := "::" . highlightedText . "::" . correctText.Text	
     FileAppend(newCommand . "`n", "typos.ahk",  "UTF-8")
-
     MyGui.Hide
     replaceTextUnderCursor()
     Run "typos.ahk"
 }
 
-replaceTextUnderCursor() {
-
+checkMarkedWord() {
     global MyGui
     global correctText
     global highlightedText
+	global fileText
     
     highlightedText := getHighlightedText()
     fileText:= FileRead("typos.ahk")
@@ -26,6 +25,12 @@ replaceTextUnderCursor() {
         correctText:= MyGui.AddEdit()
         MyGui.Show    
     }
+	replaceTextUnderCursor()
+}
+
+replaceTextUnderCursor() {
+    global highlightedText
+	global fileText
 
     Loop Parse, fileText, "`n" {
         if(InStr(A_LoopField, highlightedText)) {
@@ -53,4 +58,4 @@ getHighlightedText() {
 
 Run "typos.ahk"
 Ctrl & Q::saveAndClose()
-Ctrl & R::replaceTextUnderCursor()
+Ctrl & R::checkMarkedWord()

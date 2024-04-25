@@ -6,7 +6,7 @@ saveAndClose() {
     newCommand := "::" . highlightedText . "::" . correctText.Text	
     FileAppend(newCommand . "`n", "typos.ahk",  "UTF-8")
     MyGui.Hide
-    replaceTextUnderCursor()
+	paste(correctText.Text)
     Run "typos.ahk"
 }
 
@@ -24,8 +24,9 @@ checkMarkedWord() {
         MyGui.Add("Text",, "Correct this text: " . highlightedText)
         correctText:= MyGui.AddEdit()
         MyGui.Show    
-    }
-	replaceTextUnderCursor()
+    } else {
+		replaceTextUnderCursor()
+	}
 }
 
 replaceTextUnderCursor() {

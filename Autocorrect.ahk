@@ -19,7 +19,7 @@ checkMarkedWord() {
     highlightedText := getHighlightedText()
     fileText:= FileRead("typos.ahk")
 
-    if(!InStr(fileText, highlightedText)) {
+    if(!InStr(fileText, "::" . highlightedText . "::")) {
         MyGui := Gui()
         MyGui.Add("Text",, "Correct this text: " . highlightedText)
         correctText:= MyGui.AddEdit()
@@ -59,4 +59,4 @@ getHighlightedText() {
 
 Run "typos.ahk"
 Ctrl & Q::saveAndClose()
-Ctrl & R::checkMarkedWord()
+Ctrl & Y::checkMarkedWord()
